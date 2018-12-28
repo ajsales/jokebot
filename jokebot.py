@@ -42,7 +42,16 @@ def dad_jokes():
 	jokes_dict = [j for j in jokes_dict if not j["data"]["over_18"] and
 					(j["data"]["title"].lower().startswith("why") or
 					 j["data"]["title"].lower().startswith("what") or
-					 j["data"]["title"].lower().startswith("how"))]
+					 j["data"]["title"].lower().startswith("how") or
+					 j["data"]["title"].lower().startswith("have") or
+					 j["data"]["title"].lower().startswith("wanna") or
+					 j["data"]["title"].lower().startswith("when") or
+					 j["data"]["title"].lower().startswith("where") or
+					 j["data"]["title"].lower().startswith("which") or
+					 j["data"]["title"].lower().startswith("who") or
+					 j["data"]["title"].lower().startswith("whom") or
+					 j["data"]["title"].lower().startswith("whose") or
+					 j["data"]["title"].lower().endswith("?"))]
 	return [(j["data"]["title"].encode('unicode-escape').decode('utf-8').replace("\\u2019", "'").replace("\\n", " "),
 		j["data"]["selftext"].encode('unicode-escape').decode('utf-8').replace("\\u2019", "'").replace("\\n", " ")) for j in jokes_dict]
 
